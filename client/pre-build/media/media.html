@@ -1,1 +1,18 @@
-<h1>From media</h1>
+<md-list>
+  <md-subheader class="md-no-sticky">Add a song to the queue!</md-subheader>
+  <md-list-item ng-repeat="topping in toppings">
+    <p> {{ topping.name }} </p>
+    <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+  </md-list-item>
+  <!-- <md-divider></md-divider>
+  <md-subheader class="md-no-sticky">Clickable Items with Secondary Controls</md-subheader>
+  <md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
+    <md-icon md-svg-icon="{{setting.icon}}"></md-icon>
+    <p> {{ setting.name }} </p>
+    <md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
+  </md-list-item>
+  <md-list-item ng-click="navigateTo('data usage', $event)">
+    <md-icon md-svg-icon="cached"></md-icon>
+    <p>Data Usage</p>
+  </md-list-item> -->
+  <md-divider></md-divider>

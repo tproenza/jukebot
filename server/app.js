@@ -11,6 +11,7 @@ var buildPath = path.join(__dirname, '../client/build');    // for gulped files
 var indexHtmlPath = path.join(__dirname, './index.html');
 var nodePath = path.join(__dirname, '../node_modules');
 var imagePath = path.join(__dirname, './images');
+var songsPath = path.join(__dirname, './songs');
 /* 
 Meaniscule doesn't use Bower by default. To use Bower,
 uncomment the following line and the related `app.use` line below.
@@ -25,6 +26,7 @@ app.use(express.static(clientPath));
 app.use(express.static(buildPath));
 app.use(express.static(nodePath));
 app.use(express.static(imagePath));
+app.use(express.static(songsPath));
 // app.use(express.static(bowerPath));
 
 /* 
