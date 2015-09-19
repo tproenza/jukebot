@@ -11,6 +11,10 @@ var buildPath = path.join(__dirname, '../client/build');    // for gulped files
 var indexHtmlPath = path.join(__dirname, './index.html');
 var nodePath = path.join(__dirname, '../node_modules');
 var imagePath = path.join(__dirname, './images');
+
+// var appKey = path.join(__dirname, './development.js').ATT.appKey;
+// var appSecret = path.join(__dirname, './development.js').ATT.appKey;
+// var appCallback = path.join(__dirname, './development.js').ATT.callbackUrl;
 /* 
 Meaniscule doesn't use Bower by default. To use Bower,
 uncomment the following line and the related `app.use` line below.
@@ -53,11 +57,20 @@ directories.forEach(function(dir) {
   app.use('/api/' + dir + '/', require('./api/' + dir));
 });
 
+app.get('https://api.att.com/oauth/v4/authorize?client_id=lrvigclb54040whp8qnrmbpv203tqnho&scope=IMMN,MIM&redirect_uri=http%3A%2F%2F127.0.0.1%3A4545%2Fauth%2Fatt%2Fcallback', function(req, res, next){
+  console.log('wat', req, res);
+})
 //// Index/Home
+
+app.get('/http://127.0.0.1:4545/auth/att/callback', function(req, res) {
+  //?code=BF-ACSI~4~20150919194725~iHQ3X3zM7ptsFGb6oYX0
+  console.log('this is res', res);
+  res.redirect('/');
+});
+
 app.use('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, './index.html'));
 });
-
 
 // Errors
 //// Not found

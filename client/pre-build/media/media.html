@@ -1,1 +1,17 @@
 <h1>From media</h1>
+<!-- <label>
+  Open file dialog
+  <input type="file" style="display: none">
+</label> -->
+<input type="text" class="form-control" ng-model='newSong.title' placeholder="Song Title">
+<input type="text" class="form-control" ng-model='newSong.uri' placeholder="Link to song">
+<md-button class="btn1" ng-click='inputSong(newSong)'> Upload </md-button>
+
+<hr>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-danger" ng-repeat="song in songList" ng-click="playSong(song)">{{song.title}}</li>
+<!--   <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+  <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+  <li class="list-group-item list-group-item-danger">Vestibulum at eros</li> -->
+</ul>

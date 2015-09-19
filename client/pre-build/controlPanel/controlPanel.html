@@ -1,7 +1,8 @@
 
 <div layout="row">
-	<button class="btn btn-info">Play</button>
-	<button class="btn btn-danger">Pause</button>
+	<button class="btn btn-info" ng-click="doShowMe()">Play</button>
+	<button class="btn btn-danger" ng-click="dontShowMe()">Pause</button>
+	<img src="http://i.imgur.com/YU6d2RV.gif" ng-if="showMe" height="34px" width="184px">
 </div>
 
 <div layout="row">

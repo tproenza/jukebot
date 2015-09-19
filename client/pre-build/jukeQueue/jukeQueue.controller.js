@@ -1,5 +1,5 @@
-app.controller('JukeQueueCtrl', function($scope, $http) {
+app.controller('JukeQueueCtrl', function($scope, ControlFac) {
   
-  $scope.msgFromScope = "...And I'm a message from the HomeController scope, just so you know that I work!";
+  $scope.songList = ControlFac.songQueue
 
 });
