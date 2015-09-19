@@ -24,7 +24,7 @@ app.factory('controlPanel', function ($http, $q) {
 		return $http.get(initSessionURL).then(function (response){
 
 			console.log('got seshId', response.data.SessionID);
-			return currentHubSession.SessionID = response.data.SessionID;
+			return currentHubSession.sessionID = response.data.SessionID;
 		});
 	};
 
@@ -54,7 +54,7 @@ app.factory('controlPanel', function ($http, $q) {
 
 			currentHubSession.currentSpeaker = deviceToUse;
 
-			var addDeviceToSessionURL = harmonHubIp + '/v1/add_device_to_session?SessionID='+ currentHubSession.SessionID +'&DeviceID=' + deviceToUse.DeviceID;
+			var addDeviceToSessionURL = harmonHubIp + '/v1/add_device_to_session?SessionID='+ currentHubSession.sessionID +'&DeviceID=' + deviceToUse.DeviceID;
 
 			return $http.get(addDeviceToSessionURL);
 		})
@@ -67,16 +67,31 @@ app.factory('controlPanel', function ($http, $q) {
 				console.log('failed to add speaker');
 				return $q.when(speakerAdded);
 			} else {
-				console.log('Added speaker: ' + speakerAdded.GroupName);
+				console.log('Added speaker: ' + currentHubSession.currentSpeaker.GroupName);
 				return $q.when(speakerAdded);
 			}
 		})
 		.catch(console.warn);
 	};
 
+	var playSong = function (url) {
+		var a = currentHubSession.sessionID;
+		var b = url || 'http://127.0.0.1/songs/Disc 1 - 01 - Clocks (Edit).mp3'
+		var playSongURL = harmonHubIp + '/v1/play_web_media?SessionID='+ a +'&MediaUrl=' + b;
+		return $http.get(playSongURL);
+	};
+
+	var stopSong = function () {
+		var a = currentHubSession.sessionID;
+		var urlToStop = harmonHubIp + '/v1/pause_play?SessionID=' + a;
+		return $http.get(urlToStop);
+	};
+
 	factory.getJuke = getJuke;
 	factory.currentJuke = {};
 	factory.connect = connect;
+	factory.playSong = playSong;
+	factory.stopSong = stopSong;
 
 	return factory;
 });
