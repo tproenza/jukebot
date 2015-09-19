@@ -10,7 +10,7 @@ var fs = Promise.promisifyAll(require('fs'));
 var path = require('path');
 var mongoose = require('mongoose');
 var startDb = require('./server/db');
-var Nodemodule = require('./server/api/modules/nodemodule.model.js');
+// var Nodemodule = require('./server/api/modules/nodemodule.model.js');
 var chalk = require('chalk');
 
 var moduleNamesArray;

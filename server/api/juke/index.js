@@ -1,6 +1,6 @@
 var router = require('express').Router();
 
-var controller = require('./nodemodule.controller.js');
+var controller = require('./juke.controller.js');
 
 module.exports = router;
 
