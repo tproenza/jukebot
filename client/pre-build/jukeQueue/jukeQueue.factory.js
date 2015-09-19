@@ -1,10 +1,10 @@
 app.factory('jukeQueue', function ($http, controlPanel) {
 
 	var factory = {};
-	var currentHubSession = controlPanel.currentJuke;
+	// var currentJuke = controlPanel.currentJuke;
 
 	var playSong = function () {
-		var songToPlay = factory.currentJuke.songQueue.shift();
+		// var songToPlay = currentJuke.songQueue.shift();
 		var songURI = songToPlay.uri;
 		//more here
 	};
@@ -13,7 +13,6 @@ app.factory('jukeQueue', function ($http, controlPanel) {
 
 	return factory;
 });
-// .run();
 
 /*
 var req = {
