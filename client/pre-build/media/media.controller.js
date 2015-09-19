@@ -9,11 +9,11 @@ app.controller('MediaCtrl', function($scope, ControlFac) {
 	$scope.songList = [
 		{
 			uri: 'http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3',
-			title: 'randomn song'
+			title: 'Clocks - Coldplay'
 		},
 		{
 			uri: 'http://www.stephaniequinn.com/Music/Canon.mp3',
-			title: 'another randomn song'
+			title: 'Canon - Pachebel'
 		}
 	]
 
