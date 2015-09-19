@@ -3,11 +3,13 @@ var JukeModel = require('./juke.model');
 
 module.exports = {
   index: function (req, res) {
+    var search = req.params.jukeId ? {_id: req.params.jukeId} : {};
+
     JukeModel
-      .find()
+      .findOne(search)
       .exec()
-      .then(function(jukes) {
-        res.send(jukes);
+      .then(function (juke) {
+        res.send(juke);
       });
  },
  create: function(req, res, next) {
