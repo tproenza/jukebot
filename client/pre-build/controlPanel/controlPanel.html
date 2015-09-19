@@ -1,0 +1,24 @@
+
+<div layout="row">
+	<button class="btn btn-info">Play</button>
+	<button class="btn btn-danger">Pause</button>
+</div>
+
+<div layout="row">
+	  <div class="tabsdemoDynamicHeight">
+	    <md-content class="md-padding">
+	      <md-tabs md-dynamic-height="" md-border-bottom="">
+	        <md-tab label="Queue" ui-sref="jukeQueue">
+	          <md-content class="md-padding">
+	            <div ui-view></div>
+	          </md-content>
+	        </md-tab>
+	        <md-tab label="Songs" ui-sref="media">
+	          <md-content class="md-padding">
+	            <div ui-view></div>
+	          </md-content>
+	        </md-tab>
+	      </md-tabs>
+	    </md-content>
+	  </div>
+</div>
