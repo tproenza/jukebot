@@ -12,9 +12,8 @@ var indexHtmlPath = path.join(__dirname, './index.html');
 var nodePath = path.join(__dirname, '../node_modules');
 var imagePath = path.join(__dirname, './images');
 
-// var appKey = path.join(__dirname, './development.js').ATT.appKey;
-// var appSecret = path.join(__dirname, './development.js').ATT.appKey;
-// var appCallback = path.join(__dirname, './development.js').ATT.callbackUrl;
+var songsPath = path.join(__dirname, './songs');
+
 /* 
 Meaniscule doesn't use Bower by default. To use Bower,
 uncomment the following line and the related `app.use` line below.
@@ -29,6 +28,7 @@ app.use(express.static(clientPath));
 app.use(express.static(buildPath));
 app.use(express.static(nodePath));
 app.use(express.static(imagePath));
+app.use(express.static(songsPath));
 // app.use(express.static(bowerPath));
 
 /* 
