@@ -1,6 +1,6 @@
 var Promise = require('bluebird');
 var chalk = require('chalk');
-var dbName = "jukeBot";
+var dbName = "JukeBot";
 
 var DATABASE_URI = "mongodb://localhost:27017/" + dbName;
 
